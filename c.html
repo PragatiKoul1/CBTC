@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-color: #edf3f8;
+        margin: 0;
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .navbar {
+        width: 100%;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        padding: 15px 0;
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+    }
+    
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 80%;
+        margin: 0 auto;
+    }
+    
+    .nav-logo {
+        color: rgb(37, 2, 2);
+        font-size: 1.5em;
+        text-decoration: none;
+    }
+    
+    .nav-menu {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav-item {
+        margin-left: 20px;
+    }
+    
+    .nav-link {
+        color: white;
+        text-decoration: none;
+        font-size: 1.2em;
+        transition: color 0.3s;
+    }
+    
+    .nav-link:hover {
+        color: #e0f7fa;
+    }
+    
+    
+    .hero {
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        color: white;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding-top: 80px;
+    }
+    
+    .hero-content {
+        max-width: 600px;
+    }
+    
+    .hero h1 {
+        font-size: 3em;
+        margin: 0;
+    }
+    
+    .hero p {
+        font-size: 1.5em;
+        margin: 20px 0;
+    }
+    
+    .hero button {
+        padding: 15px 30px;
+        font-size: 1.2em;
+        color: #4facfe;
+        background-color: white;
+        border: none;
+        border-radius: 25px;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .hero button:hover {
+        background-color: #e0f7fa;
+        transform: scale(1.05);
+    }
+    
+    
+    .container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        width: 400px;
+        margin: 50px auto;
+        margin-top: 100px;
+    }
+    
+    h1, h2 {
+        text-align: center;
+        color: #333;
+    }
+    
+    .input-container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+    }
+    
+    #taskInput {
+        width: 75%;
+        padding: 10px;
+        border: 1px solid black;
+        border-radius: 4px;
+    }
+    
+    #addTaskBtn {
+        padding: 10px;
+        border: none;
+        background-color: #28a745;
+        color: white;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+    
+    #addTaskBtn:hover {
+        background-color: #218838;
+    }
+    
+    ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    li {
+        background-color: rgb(52, 135, 146);
+        padding: 10px;
+        border-radius: 4px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+    
+    li.completed {
+        background-color: #d4edda;
+        text-decoration: line-through;
+    }
+    
+    button.completeBtn {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    button.completeBtn:hover {
+        background-color: #0056b3;
+    }
+    
+    .date-time {
+        font-size: 0.8em;
+        color: #6c757d;
+    }
+    .contact {
+    max-width: 600px;
+    margin: 150px auto;
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: white;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  form {
+    width: 100%;
+  }
+  label {
+    font-weight: bold;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="password"],
+  input[type="number"],
+  select {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+  }
+  .error {
+    color: red;
+    font-size: 0.9em;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .checkbox-group {
+    margin-top: 10px;
+  }
+  .button-group {
+    margin-top: 20px;
+    text-align: center;
+  }
+  button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+  }
+  button[type="reset"] {
+    background-color: #dc3545;
+    margin-left: 10px;
+  }
+
+
+    
+        </style>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="#" class="nav-logo"><h1>To-Do List</h1></a>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="c.html" class="nav-link">Contact/Login</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    
+    
+        <div class="container hidden" id="todoContainer">
+            <h1>To-Do List</h1>
+            <div class="input-container">
+                <input type="text" id="taskInput" placeholder="Add a new task...">
+                <button id="addTaskBtn">Add Task</button>
+            </div>
+            <ul id="taskList"></ul>
+            <h2>Completed Tasks</h2>
+            <ul id="completedTaskList"></ul>
+        </div>
+
+        <div class="contact">
+            <h2>Contact Form</h2>
+            <form id="researcherForm" onsubmit="return validateForm()" action="layout.html">
+              <div class="form-group">
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" required>
+                <span id="fullNameError" class="error"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span id="emailError" class="error"></span>
+              </div>
+              <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <span id="passwordError" class="error"></span>
+              </div>
+              <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="18" max="100" required>
+                <span id="ageError" class="error"></span>
+              </div>
+              <div class="form-group">
+                <label>Gender:</label>
+                <div>
+                  <input type="radio" id="male" name="gender" value="male">
+                  <label for="male">Male</label>
+                  <input type="radio" id="female" name="gender" value="female">
+                  <label for="female">Female</label>
+                  <input type="radio" id="other" name="gender" value="other">
+                  <label for="other">Other</label>
+                </div>
+                <span id="genderError" class="error"></span>
+              </div>
+          
+              <div class="button-group">
+                <button type="submit">Submit</button>
+                <button type="reset">Reset</button>
+              </div>
+            </form>
+          </div>
+          
+          <script>
+          function validateForm() {
+            var isValid = true;
+          
+            var fullName = document.getElementById("fullName").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var age = document.getElementById("age").value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            
+          
+            var fullNamePattern = /^[A-Za-z\s]+$/;
+            var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            var passwordPattern ;
+          
+            if (!fullNamePattern.test(fullName)) {
+              document.getElementById("fullNameError").textContent = "Invalid full name";
+              isValid = false;
+            } else {
+              document.getElementById("fullNameError").textContent = "";
+            }
+          
+            if (!emailPattern.test(email)) {
+              document.getElementById("emailError").textContent = "Invalid email";
+              isValid = false;
+            } else {
+              document.getElementById("emailError").textContent = "";
+            }
+          
+            if (!passwordPattern.test(password)) {
+              document.getElementById("passwordError").textContent = "Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, and one number";
+              isValid = false;
+            } else {
+              document.getElementById("passwordError").textContent = "";
+            }
+          
+            if (age < 18 || age > 100 || isNaN(age)) {
+              document.getElementById("ageError").textContent = "Invalid age";
+              isValid = false;
+            } else {
+              document.getElementById("ageError").textContent = "";
+            }
+          
+            if (!gender) {
+              document.getElementById("genderError").textContent = "Please select gender";
+              isValid = false;
+            } else {
+              document.getElementById("genderError").textContent = "";
+            }
+          
+          
+          }
+          
+          document.getElementById("fullName").onblur = function() {
+            validateForm();
+          };
+          
+          document.getElementById("email").onblur = function() {
+            validateForm();
+          };
+          
+          document.getElementById("password").onblur = function() {
+            validateForm();
+          };
+          
+          document.getElementById("age").onblur = function() {
+            validateForm();
+          };
+          
+          document.querySelector('input[name="gender"]').onchange = function() {
+            validateForm();
+          };
+          
+          </script>
+          
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/js/bootstrap.min.js" integrity="sha512-ykZ1QQr0Jy/4ZkvKuqWn4iF3lqPZyij9iRv6sGqLRdTPkY69YX6+7wvVGmsdBbiIfN/8OdsI7HABjvEok6ZopQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="custom.js"></script>
+      
+        
+      
+        </body>
+        </html>
