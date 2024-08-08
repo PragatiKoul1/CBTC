@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" integrity="sha512-jnSuA4Ss2PkkikSOLtYs8BlYIeeIK1h99ty4YfvRPAlzr377vr3CXDb7sb7eEEBYjDtcYj+AjBH3FLv5uSJuXg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+
+        body{
+            
+        }
+        .image img{
+            margin: auto;
+            padding: 25px;
+        }
+        .image1 img{
+       
+            max-width: 650px;
+            height: 700;
+            padding: 25px;
+        }
+           /* Footer Styling */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-about, .footer-links, .footer-social {
+    margin: 20px 0;
+    flex-basis: 30%;
+}
+
+.footer h3 {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    letter-spacing: 1px;
+    border-bottom: 2px solid #6e8efb;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-about p {
+    font-size: 0.9em;
+    line-height: 1.6;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+.footer-links ul li a:hover {
+    color: #6e8efb;
+}
+
+.footer-social a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1.5em;
+    color: #fff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social a:hover {
+    color: #6e8efb;
+    transform: translateY(-5px);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    border-top: 1px solid #444;
+    padding-top: 20px;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Social Media Icons Styling */
+.social-icon {
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .footer-about, .footer-links, .footer-social {
+        flex-basis: 100%;
+        margin: 20px 0;
+    }
+}
+
+
+
+    </style>
+
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top" id="mainmenu">
+        <div class="container">
+          <a class="navbar-brand" href="#">PRAGATI KOUL</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="front.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="t2.html">Skills/Projects</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="form.html">Contacts</a>
+              </li>
+             
+            
+              
+        
+            </ul>
+           
+          </div>
+        </div>
+      </nav>
+
+      
+
+      <div class="image">
+        <img src="bannner.png">
+      </div>
+
+
+
+      <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-about">
+                <h3>About Me</h3>
+                <p>I am a passionate web developer with a keen interest in creating dynamic and responsive websites. Connect with me through the following channels.</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="front.html">About</a></li>
+                    <li><a href="t2.html">Skills/Projects</a></li>
+                    <li><a href="form.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Me</h3>
+               <br> <a href="https://www.facebook.com/pragati.koul?mibextid=ZbWKwL" class="social-icon"><i class="fab fa-facebook-f"><img src="fb.png" height="40px" width="40px"/></i></a>
+                <a href="https://www.instagram.com/pragatikoul?igsh=aWlzenEzaTdrZ2Q2" class="social-icon"><i class="fab fa-twitter"><img src="insta.png" height="40px" width="40px"></i></a>
+                <a href="https://www.linkedin.com/in/pragati-koul-034a7625b/" class="social-icon"><i class="fab fa-linkedin-in"><img src="linkedin.png" height="40px" width="40px"></i></a>
+                <a href="https://github.com/PragatiKoul1/cipherbytetechnologies" class="social-icon"><i class="fab fa-github"><img src="github.jpg" height="40px" width="40px"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Pragati Koul. All Rights Reserved.</p>
+        </div>
+      </footer>
+</body>
+</html>
